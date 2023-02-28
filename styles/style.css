@@ -3,7 +3,6 @@
   min-width: 1100px;
   max-width: 1600px;
   margin: auto;
-  /*Helvetica Neue didn't want to show up in VS Code */
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -36,7 +35,7 @@
   /* Reset default list styles here */
   display: flex;
   list-style-type: none;
-  margin-top: 8px;
+  margin: 8px 0 0;
   column-gap: 20px;
   padding: 0;
 }
@@ -53,7 +52,7 @@
 
 .header__title {
   max-width: 544px;
-  margin-top: 150px;
+  margin: 150px 0 0;
   font-size: 66px;
   line-height: 76px;
   font-weight: 500;
@@ -61,7 +60,7 @@
 
 .header__description {
   max-width: 532px;
-  margin-top: 32px;
+  margin: 32px 0 0;
   font-size: 20px;
   line-height: 30px;
 }
@@ -245,6 +244,8 @@
   padding-top: 100px;
   padding-bottom: 140px;
   background-image: url("../images/staff_picks_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .staff__title {
@@ -268,7 +269,7 @@
 .staff__cards {
   display: flex;
   max-width: 760px;
-  margin: 68px auto;
+  margin: 68px auto 0;
   flex-wrap: wrap;
   gap: 40px;
   padding: 0;
@@ -367,7 +368,7 @@
   box-sizing: border-box;
   display: flex;
   gap: 120px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .about__title {
@@ -375,7 +376,7 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 500;
-  z-index: 1;
+  z-index: 2;
   max-width: 154px;
 }
 
@@ -384,7 +385,7 @@
   line-height: 30px;
   font-weight: 400;
   max-width: 660px;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -400,7 +401,7 @@
   height: 495px;
   border-radius: 50%;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   top: -121px;
   left: -91px;
 }
@@ -420,16 +421,10 @@
 }
 
 .footer__column_content_hours {
-  margin-right: 100px;
-}
-
-.footer__column_content_social {
-  /* Kept because it came with the code provided, didn't need to put code here to follow brief */
-  /* Tutor said to keep the empty ones for this project */
+  margin: 0 100px 0 auto;
 }
 
 .footer__logo {
-  margin-right: auto;
   height: 21px;
   width: 116px;
 }
@@ -441,19 +436,16 @@
   margin: 0;
 }
 
-.footer__list-item {
-  /* code below was a simpler solution because it ensures that the margin is only between the line items,
-  not above or below, and it removes the need for clunky nth-of-type */
-}
-
 /* This was the simplest solution I found to ensure that there were 16px between the line items without creating
 unnecessary space before or after */
+/* This is an adjacent siblings selector, it only applies to the next element specified after the first element
+https://stackoverflow.com/a/63890844/21286710 https://www.w3schools.com/css/css_combinators.asp */
 .footer__list-item + .footer__list-item {
-  margin-top: 16px;
+  margin: 16px 0 0;
 }
 
 .footer__column-heading {
-  margin-top: 0px;
+  margin: 0 0 20px 0;
 }
 
 .footer__column-link {
